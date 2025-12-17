@@ -4,23 +4,23 @@
 
 @layer base {
   :root {
-    /* Voimation Dark Theme */
-    --background: 230 60% 9%; /* #0A0E27 */
+    /* Voimation Dark Theme - Pure Black Background */
+    --background: 0 0% 0%; /* Pure Black */
     --foreground: 210 40% 98%;
 
-    --card: 230 50% 12%;
+    --card: 0 0% 6%;
     --card-foreground: 210 40% 98%;
 
-    --popover: 230 50% 10%;
+    --popover: 0 0% 4%;
     --popover-foreground: 210 40% 98%;
 
     --primary: 217 91% 60%; /* #3B82F6 Electric Blue */
     --primary-foreground: 210 40% 98%;
 
     --secondary: 188 94% 43%; /* #06B6D4 Cyan */
-    --secondary-foreground: 230 60% 9%;
+    --secondary-foreground: 0 0% 0%;
 
-    --muted: 230 40% 18%;
+    --muted: 0 0% 12%;
     --muted-foreground: 215 20% 65%;
 
     --accent: 188 94% 43%;
@@ -29,8 +29,8 @@
     --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 230 30% 20%;
-    --input: 230 30% 20%;
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
     --ring: 217 91% 60%;
 
     --radius: 0.75rem;
@@ -38,17 +38,17 @@
     /* Custom Voimation Variables */
     --glow-primary: 217 91% 60%;
     --glow-secondary: 188 94% 43%;
-    --glass-bg: 230 50% 12%;
-    --glass-border: 230 30% 25%;
+    --glass-bg: 0 0% 8%;
+    --glass-border: 0 0% 18%;
 
     /* Gradients */
     --gradient-primary: linear-gradient(135deg, hsl(217 91% 60%) 0%, hsl(188 94% 43%) 100%);
-    --gradient-bg: radial-gradient(ellipse at top, hsl(230 50% 15%) 0%, hsl(230 60% 9%) 50%);
-    --gradient-cosmic: radial-gradient(ellipse at center, hsl(230 50% 18%) 0%, hsl(230 60% 9%) 70%);
+    --gradient-bg: radial-gradient(ellipse at top, hsl(0 0% 8%) 0%, hsl(0 0% 0%) 50%);
+    --gradient-cosmic: radial-gradient(ellipse at center, hsl(0 0% 10%) 0%, hsl(0 0% 0%) 70%);
   }
 
   .dark {
-    --background: 230 60% 9%;
+    --background: 0 0% 0%;
     --foreground: 210 40% 98%;
   }
 }
@@ -159,17 +159,17 @@
   /* Hero Background */
   .hero-bg {
     background: 
-      radial-gradient(ellipse 80% 50% at 50% -20%, hsl(217 91% 60% / 0.15) 0%, transparent 50%),
-      radial-gradient(ellipse 60% 40% at 80% 20%, hsl(188 94% 43% / 0.1) 0%, transparent 50%),
+      radial-gradient(ellipse 80% 50% at 50% -20%, hsl(217 91% 60% / 0.2) 0%, transparent 50%),
+      radial-gradient(ellipse 60% 40% at 80% 20%, hsl(188 94% 43% / 0.15) 0%, transparent 50%),
       hsl(var(--background));
   }
 
   /* Cosmic CTA Background */
   .cosmic-bg {
     background: 
-      radial-gradient(ellipse 100% 100% at 50% 50%, hsl(217 91% 60% / 0.2) 0%, transparent 50%),
-      radial-gradient(ellipse 80% 80% at 20% 80%, hsl(188 94% 43% / 0.15) 0%, transparent 50%),
-      radial-gradient(ellipse 60% 60% at 80% 20%, hsl(217 91% 60% / 0.1) 0%, transparent 50%),
+      radial-gradient(ellipse 100% 100% at 50% 50%, hsl(217 91% 60% / 0.25) 0%, transparent 50%),
+      radial-gradient(ellipse 80% 80% at 20% 80%, hsl(188 94% 43% / 0.2) 0%, transparent 50%),
+      radial-gradient(ellipse 60% 60% at 80% 20%, hsl(217 91% 60% / 0.15) 0%, transparent 50%),
       hsl(var(--background));
   }
 
