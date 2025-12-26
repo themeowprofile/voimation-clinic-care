@@ -134,17 +134,35 @@
     box-shadow: 0 0 30px -10px hsl(var(--glow-primary) / 0.5);
   }
 
-  /* Popular Badge Pulse */
+  /* Popular Badge - Rotating Glow */
   .pulse-glow {
-    animation: pulse-glow 2s ease-in-out infinite;
+    position: relative;
   }
 
-  @keyframes pulse-glow {
-    0%, 100% {
-      box-shadow: 0 0 40px -10px hsl(var(--glow-primary) / 0.5);
+  .pulse-glow::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: inherit;
+    background: conic-gradient(
+      from 0deg,
+      hsl(217 91% 60% / 0.6),
+      hsl(188 94% 43% / 0.4),
+      hsl(217 91% 60% / 0.1),
+      hsl(188 94% 43% / 0.4),
+      hsl(217 91% 60% / 0.6)
+    );
+    animation: rotate-glow 6s linear infinite;
+    z-index: -1;
+    filter: blur(15px);
+  }
+
+  @keyframes rotate-glow {
+    0% {
+      transform: rotate(0deg);
     }
-    50% {
-      box-shadow: 0 0 60px -10px hsl(var(--glow-primary) / 0.8);
+    100% {
+      transform: rotate(360deg);
     }
   }
 
