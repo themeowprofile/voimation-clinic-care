@@ -5,7 +5,7 @@ import PricingModal from "@/components/PricingModal";
 
 const pricingPlans = [
   {
-    name: "Starter Intake Automation",
+    name: "Beginner",
     price: "$285",
     period: "/month",
     setupFee: "$2,450",
@@ -44,7 +44,7 @@ const pricingPlans = [
     idealFor: "Small/Solo Clinics",
   },
   {
-    name: "Growth Conversion System",
+    name: "Scale",
     price: "$595",
     period: "/month",
     setupFee: "$2,450",
@@ -80,7 +80,7 @@ const pricingPlans = [
     comparison: "Turns phone traffic into predictable bookings",
   },
   {
-    name: "Clinic Scale Infrastructure",
+    name: "Enterprise",
     price: "$945",
     period: "/month",
     setupFee: "$2,450",
