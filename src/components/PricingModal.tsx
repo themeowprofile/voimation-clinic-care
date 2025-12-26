@@ -1,16 +1,19 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { X, Check, Shield } from "lucide-react";
+import { X, Check, Shield, XCircle } from "lucide-react";
 
 interface PricingPlan {
   name: string;
   price: string;
   period: string;
+  setupFee: string;
   subtitle: string;
+  positioning: string;
   isPopular?: boolean;
   features: {
     highlighted: string[];
     regular: string[];
   };
+  notIncluded?: string[];
   callLimit: string;
   aiAgents: string;
   support: string;
@@ -43,7 +46,7 @@ const PricingModal = ({ plan, isOpen, onClose }: PricingModalProps) => {
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
             transition={{ duration: 0.3, ease: "easeOut" }}
             onClick={(e) => e.stopPropagation()}
-            className={`relative w-full max-w-lg glass-card-glow p-8 ${
+            className={`relative w-full max-w-lg glass-card-glow p-8 max-h-[90vh] overflow-y-auto ${
               plan.isPopular ? "pulse-glow" : ""
             }`}
           >
@@ -73,6 +76,9 @@ const PricingModal = ({ plan, isOpen, onClose }: PricingModalProps) => {
                 <span className="text-muted-foreground">{plan.period}</span>
               </div>
               <p className="text-sm text-muted-foreground mt-2">{plan.subtitle}</p>
+              <p className="text-sm text-secondary mt-3 font-medium italic">
+                "{plan.positioning}"
+              </p>
             </div>
 
             {/* Trust Badge */}
@@ -90,7 +96,7 @@ const PricingModal = ({ plan, isOpen, onClose }: PricingModalProps) => {
                   <div className="w-5 h-5 rounded-full bg-gradient-to-r from-primary to-secondary flex items-center justify-center flex-shrink-0 mt-0.5">
                     <Check size={12} className="text-white" />
                   </div>
-                  <span className="text-foreground font-medium">{feature}</span>
+                  <span className="text-foreground font-semibold">{feature}</span>
                 </div>
               ))}
             </div>
@@ -105,14 +111,29 @@ const PricingModal = ({ plan, isOpen, onClose }: PricingModalProps) => {
               ))}
             </div>
 
+            {/* Not Included */}
+            {plan.notIncluded && plan.notIncluded.length > 0 && (
+              <div className="mb-6 pl-8">
+                <p className="text-xs text-muted-foreground mb-2 font-medium">Not included (by design):</p>
+                <div className="space-y-1">
+                  {plan.notIncluded.map((item, index) => (
+                    <div key={index} className="flex items-center gap-2 text-sm text-muted-foreground/60">
+                      <XCircle size={14} />
+                      <span>{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
             {/* Plan Details */}
             <div className="grid grid-cols-2 gap-3 mb-6 text-sm">
               <div className="bg-muted/30 rounded-lg p-3">
-                <p className="text-muted-foreground">Call Limit</p>
+                <p className="text-muted-foreground">Voice Minutes</p>
                 <p className="font-semibold text-foreground">{plan.callLimit}</p>
               </div>
               <div className="bg-muted/30 rounded-lg p-3">
-                <p className="text-muted-foreground">AI Agents</p>
+                <p className="text-muted-foreground">Phone Numbers</p>
                 <p className="font-semibold text-foreground">{plan.aiAgents}</p>
               </div>
               <div className="bg-muted/30 rounded-lg p-3">
@@ -137,9 +158,9 @@ const PricingModal = ({ plan, isOpen, onClose }: PricingModalProps) => {
               Costs less than 1 part-time receptionist
             </p>
 
-            {/* Development Fee Note */}
+            {/* Setup Fee Note */}
             <p className="text-center text-xs text-muted-foreground mb-6">
-              One-time AI setup & deployment: $3,450 (required)
+              One-time AI setup & deployment: {plan.setupFee} (required)
             </p>
 
             {/* CTA */}
