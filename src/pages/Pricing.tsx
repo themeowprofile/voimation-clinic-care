@@ -5,104 +5,114 @@ import PricingModal from "@/components/PricingModal";
 
 const pricingPlans = [
   {
-    name: "Starter",
-    price: "$299",
+    name: "Starter Intake Automation",
+    price: "$285",
     period: "/month",
-    subtitle: "Best for clinics handling 20-50 patient calls/day",
+    setupFee: "$2,450",
+    subtitle: "Best for: Small clinics, low call volume, first-time AI users",
+    positioning: "This makes sure every call is answered — even when your staff can't.",
     isPopular: false,
     previewFeatures: [
-      "AI Receptionist",
-      "Basic Appointment Booking",
-      "Email Support",
+      "1,500 AI voice minutes/month",
+      "1 phone number",
+      "Missed & after-hours calls",
+      "Emergency detection & escalation",
     ],
     features: {
       highlighted: [
-        "Never miss another patient call",
-        "Reduce front-desk workload instantly",
-        "Appointments booked automatically, 24/7",
+        "1,500 AI voice minutes/month",
+        "1 phone number included",
+        "Emergency detection & escalation rules",
       ],
       regular: [
-        "Basic appointment scheduling",
-        "Voicemail transcription",
-        "Email support (48hr response)",
-        "Standard integrations",
+        "AI handles missed calls",
+        "After-hours call coverage",
+        "New patient inquiries",
+        "Appointment requests (capture or book)",
+        "Call recordings + transcripts",
+        "Basic reporting dashboard",
       ],
     },
-    callLimit: "500 calls/mo",
-    aiAgents: "1 AI Agent",
-    support: "Email Support",
+    notIncluded: [
+      "SMS follow-ups",
+      "Multiple phone numbers",
+      "Advanced routing logic",
+    ],
+    callLimit: "1,500 mins/mo",
+    aiAgents: "1 Phone Number",
+    support: "Standard",
     idealFor: "Small/Solo Clinics",
-    label: "Ideal for small or solo clinics",
-    scarcity: "Perfect for testing AI automation risk-free",
   },
   {
-    name: "Professional",
-    price: "$599",
+    name: "Growth Conversion System",
+    price: "$595",
     period: "/month",
-    subtitle: "Best for clinics handling 50-150 patient calls/day",
+    setupFee: "$2,450",
+    subtitle: "Best for: Busy clinics missing calls during peak hours",
+    positioning: "This turns phone traffic into predictable bookings instead of callbacks.",
     isPopular: true,
     previewFeatures: [
-      "Everything in Starter",
-      "Patient Follow-ups",
-      "EHR Integration",
-      "Priority Support",
+      "3,500 AI voice minutes/month",
+      "10,000 SMS messages/month",
+      "2 phone numbers",
+      "Live overflow handling",
     ],
     features: {
       highlighted: [
-        "Never miss another patient call",
-        "Reduce front-desk workload instantly",
-        "Appointments booked automatically, 24/7",
+        "3,500 AI voice minutes/month",
+        "10,000 SMS messages/month",
+        "2 phone numbers included",
       ],
       regular: [
-        "Advanced appointment management",
-        "Patient follow-up automation",
-        "EHR integration",
-        "Insurance verification",
-        "Priority support (24hr response)",
-        "Custom voice & personality",
+        "Everything in Starter, PLUS:",
+        "Live overflow call handling during office hours",
+        "SMS confirmations & missed-call follow-ups",
+        "Multi-step call qualification",
+        "Intelligent routing (staff, voicemail, callbacks)",
+        "Custom clinic-specific scripting",
+        "Daily call & booking summaries",
       ],
     },
-    callLimit: "2,000 calls/mo",
-    aiAgents: "3 AI Agents",
-    support: "Priority Support",
+    callLimit: "3,500 mins/mo",
+    aiAgents: "2 Phone Numbers",
+    support: "Priority",
     idealFor: "Growing Clinics",
-    comparison: "Clinics on this plan save an average of 40+ staff hours/month",
+    comparison: "Turns phone traffic into predictable bookings",
   },
   {
-    name: "Enterprise",
-    price: "Custom",
-    period: "",
-    subtitle: "Best for multi-location or high-volume clinics",
+    name: "Clinic Scale Infrastructure",
+    price: "$945",
+    period: "/month",
+    setupFee: "$2,450",
+    subtitle: "Best for: High-volume clinics, multi-doctor practices, growth-focused owners",
+    positioning: "This replaces the need to ever hire another front-desk employee.",
     isPopular: false,
     previewFeatures: [
-      "Everything in Professional",
-      "Unlimited Calls",
-      "Dedicated Account Manager",
-      "Custom AI Training",
+      "6,000 AI voice minutes/month",
+      "20,000 SMS messages/month",
+      "Multiple phone numbers",
+      "24/7 full intake coverage",
     ],
     features: {
       highlighted: [
-        "Never miss another patient call",
-        "Reduce front-desk workload instantly",
-        "Custom AI infrastructure for your needs",
+        "6,000 AI voice minutes/month",
+        "20,000 SMS messages/month",
+        "Multiple phone numbers",
       ],
       regular: [
-        "Unlimited AI agents",
-        "Multi-location support",
-        "Custom AI training",
-        "Emergency triage system",
-        "Dedicated account manager",
-        "24/7 phone support",
-        "SLA guarantees",
-        "On-site implementation",
+        "Everything in Growth, PLUS:",
+        "24/7 full intake coverage",
+        "Advanced routing (by service, urgency, time of day)",
+        "Automated SMS recovery for unbooked calls",
+        "Multi-department or multi-location logic",
+        "Monthly optimization & performance tuning",
+        "Priority support & faster changes",
       ],
     },
-    callLimit: "Unlimited",
-    aiAgents: "Unlimited",
-    support: "24/7 Dedicated",
+    callLimit: "6,000 mins/mo",
+    aiAgents: "Multiple Numbers",
+    support: "Priority+",
     idealFor: "Multi-Location",
-    label: "Designed for multi-location or high-volume clinics",
-    scarcity: "Customization & priority handling",
   },
 ];
 
@@ -130,7 +140,7 @@ const Pricing = () => {
               Choose the plan that fits your clinic's needs. All plans include our core AI technology.
             </p>
             <p className="text-sm text-muted-foreground">
-              All plans require a one-time development fee of <span className="text-primary font-semibold">$3,450</span>
+              All plans require a one-time setup fee of <span className="text-primary font-semibold">$2,450</span>
             </p>
           </motion.div>
         </div>
@@ -170,10 +180,13 @@ const Pricing = () => {
                   }`}
                 >
                   <h3 className="text-xl font-bold text-foreground mb-2">{plan.name}</h3>
-                  <div className="flex items-baseline gap-1 mb-4">
+                  <div className="flex items-baseline gap-1 mb-2">
                     <span className="text-4xl font-bold gradient-text">{plan.price}</span>
                     <span className="text-muted-foreground">{plan.period}</span>
                   </div>
+                  <p className="text-xs text-muted-foreground mb-4">
+                    + {plan.setupFee} setup
+                  </p>
 
                   <p className="text-sm text-muted-foreground mb-6">{plan.subtitle}</p>
 
@@ -186,18 +199,22 @@ const Pricing = () => {
                     ))}
                   </ul>
 
-                  <button
-                    className={`w-full py-3 rounded-xl font-medium transition-all duration-300 ${
+                  <a
+                    href="https://calendly.com/voimation/30min"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={(e) => e.stopPropagation()}
+                    className={`w-full py-3 rounded-xl font-semibold transition-all duration-300 block text-center ${
                       plan.isPopular
                         ? "btn-glow"
                         : "bg-muted hover:bg-muted/80 text-foreground"
                     }`}
                   >
-                    <span>View Details</span>
-                  </button>
+                    <span>Get Started</span>
+                  </a>
 
                   <p className="text-xs text-center text-muted-foreground mt-4">
-                    Click to see full features
+                    Click card for full details
                   </p>
                 </div>
               </motion.div>
