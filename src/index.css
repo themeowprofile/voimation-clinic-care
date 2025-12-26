@@ -134,27 +134,32 @@
     box-shadow: 0 0 30px -10px hsl(var(--glow-primary) / 0.5);
   }
 
-  /* Popular Badge - Rotating Glow */
+  /* Popular Badge - Organic Flowing Glow */
   .pulse-glow {
     position: relative;
+    overflow: visible;
   }
 
   .pulse-glow::before {
     content: '';
     position: absolute;
-    inset: -2px;
-    border-radius: inherit;
+    top: -30%;
+    left: -30%;
+    width: 160%;
+    height: 160%;
     background: conic-gradient(
       from 0deg,
-      hsl(217 91% 60% / 0.6),
-      hsl(188 94% 43% / 0.4),
+      hsl(217 91% 60% / 0.5),
+      hsl(188 94% 43% / 0.3),
       hsl(217 91% 60% / 0.1),
-      hsl(188 94% 43% / 0.4),
-      hsl(217 91% 60% / 0.6)
+      hsl(188 94% 43% / 0.3),
+      hsl(217 91% 60% / 0.5)
     );
-    animation: rotate-glow 6s linear infinite;
+    border-radius: 60% 40% 70% 30% / 40% 50% 60% 50%;
+    animation: morph-glow 8s ease-in-out infinite, rotate-glow 12s linear infinite;
     z-index: -1;
-    filter: blur(15px);
+    filter: blur(40px);
+    opacity: 0.7;
   }
 
   @keyframes rotate-glow {
@@ -163,6 +168,21 @@
     }
     100% {
       transform: rotate(360deg);
+    }
+  }
+
+  @keyframes morph-glow {
+    0%, 100% {
+      border-radius: 60% 40% 70% 30% / 40% 50% 60% 50%;
+    }
+    25% {
+      border-radius: 40% 60% 30% 70% / 60% 30% 70% 40%;
+    }
+    50% {
+      border-radius: 50% 50% 40% 60% / 70% 40% 50% 60%;
+    }
+    75% {
+      border-radius: 70% 30% 60% 40% / 30% 60% 40% 70%;
     }
   }
 
