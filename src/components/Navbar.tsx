@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import voimationLogo from "@/assets/voimation-logo.jpg";
 
 const navLinks = [
   { name: "Home", path: "/" },
@@ -19,15 +20,12 @@ const Navbar = () => {
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
-              <span className="text-white font-bold text-lg">V</span>
-            </div>
-            <span className="text-xl font-bold text-foreground">Voimation</span>
+          <Link to="/" className="flex items-center">
+            <img src={voimationLogo} alt="Voimation" className="h-10 md:h-12" />
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          {/* Desktop Navigation - Moved to left */}
+          <div className="hidden md:flex items-center gap-8 ml-8 mr-auto">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
@@ -42,6 +40,7 @@ const Navbar = () => {
               </Link>
             ))}
           </div>
+
 
           {/* CTA Button */}
           <div className="hidden md:block">
