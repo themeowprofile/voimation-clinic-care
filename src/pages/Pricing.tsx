@@ -153,9 +153,9 @@ const Pricing = () => {
       </section>
 
       {/* Pricing Cards */}
-      <section className="py-24">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      <section className="py-24 overflow-x-hidden">
+        <div className="container mx-auto px-4 md:px-6 overflow-hidden">
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto overflow-hidden">
             {pricingPlans.map((plan, index) => (
               <motion.div
                 key={plan.name}
