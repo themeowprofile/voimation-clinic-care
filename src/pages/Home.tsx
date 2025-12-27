@@ -202,11 +202,7 @@ const Home = () => {
               transition={{ duration: 0.6 }}
               className="glass-card p-10 md:p-12"
             >
-              <div className="flex flex-col md:flex-row items-start gap-8">
-                <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center flex-shrink-0">
-                  <span className="text-4xl font-bold text-white">V</span>
-                </div>
-                <div>
+              <div>
                   <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
                     Built for Healthcare
                   </h2>
@@ -227,7 +223,6 @@ const Home = () => {
                       </span>
                     ))}
                   </div>
-                </div>
               </div>
             </motion.div>
           </div>
