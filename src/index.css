@@ -137,7 +137,7 @@
   /* Popular Badge - Organic Flowing Glow */
   .pulse-glow {
     position: relative;
-    overflow: visible;
+    overflow: hidden;
   }
 
   .pulse-glow::before {

@@ -126,9 +126,9 @@ const Pricing = () => {
   const [selectedPlan, setSelectedPlan] = useState<typeof pricingPlans[0] | null>(null);
 
   return (
-    <main className="pt-16 md:pt-20">
+    <main className="pt-16 md:pt-20 overflow-x-hidden">
       {/* Hero Section */}
-      <section className="hero-bg py-24 relative overflow-hidden">
+      <section className="hero-bg py-24 relative overflow-hidden w-full">
         <div className="absolute top-1/4 left-1/3 w-80 h-80 bg-primary/15 rounded-full blur-[100px] pointer-events-none" />
         <div className="absolute bottom-1/3 right-1/4 w-72 h-72 bg-secondary/10 rounded-full blur-[80px] pointer-events-none" />
 
