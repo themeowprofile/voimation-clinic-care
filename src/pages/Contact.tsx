@@ -21,10 +21,10 @@ const Contact = () => {
   }, []);
 
   return (
-    <main className="pt-16 md:pt-20">
+    <main className="pt-16 md:pt-20 bg-white min-h-screen">
       {/* Hero Section */}
-      <section className="hero-bg py-16 md:py-20 relative overflow-hidden">
-        <div className="absolute top-1/3 left-1/4 w-72 h-72 bg-primary/15 rounded-full blur-[100px] pointer-events-none" />
+      <section className="bg-gradient-to-b from-gray-50 to-white py-16 md:py-20 relative overflow-hidden">
+        <div className="absolute top-1/3 left-1/4 w-72 h-72 bg-primary/10 rounded-full blur-[100px] pointer-events-none" />
         <div className="absolute bottom-1/4 right-1/3 w-64 h-64 bg-secondary/10 rounded-full blur-[80px] pointer-events-none" />
 
         <div className="container mx-auto px-4 md:px-6 relative z-10">
@@ -34,10 +34,10 @@ const Contact = () => {
             transition={{ duration: 0.7 }}
             className="max-w-3xl mx-auto text-center"
           >
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
               Contact <span className="gradient-text">Us</span>
             </h1>
-            <p className="text-lg text-muted-foreground">
+            <p className="text-lg text-gray-600">
               Fill out the form below and we'll get back to you shortly.
             </p>
           </motion.div>
@@ -45,7 +45,7 @@ const Contact = () => {
       </section>
 
       {/* Form Section */}
-      <section className="py-12 md:py-16">
+      <section className="py-12 md:py-16 bg-white">
         <div className="container mx-auto px-4 md:px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -53,7 +53,7 @@ const Contact = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="max-w-3xl mx-auto"
           >
-            <div className="glass-card p-4 md:p-8 rounded-2xl">
+            <div className="bg-white shadow-lg border border-gray-100 p-4 md:p-8 rounded-2xl">
               <iframe
                 src="https://api.leadconnectorhq.com/widget/form/iDWg4b8dBJ0Yo9kk2jEZ"
                 style={{
