@@ -13,10 +13,10 @@ const Footer = () => {
 
           {/* Links */}
           <div className="flex items-center gap-6 text-sm text-muted-foreground">
-            <Link to="/privacy" className="hover:text-foreground transition-colors">
+            <Link to="/privacy-policy" className="hover:text-foreground transition-colors">
               Privacy Policy
             </Link>
-            <Link to="/terms" className="hover:text-foreground transition-colors">
+            <Link to="/termsofservice" className="hover:text-foreground transition-colors">
               Terms of Service
             </Link>
           </div>
